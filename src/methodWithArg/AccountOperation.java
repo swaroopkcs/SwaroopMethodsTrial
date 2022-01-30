@@ -17,8 +17,8 @@ public class AccountOperation {
 		return false;
 	}
 
-	void depositCash(boolean correctAccntDetails) {
-		if (correctAccntDetails) {
+	void depositCash(String accountNum, int pinEntered) {
+		if (cardValidation(accountNum, pinEntered)) {
 			System.out.println("Please enter the amount that you want to deposit: ");
 			double cashDeposited = sc.nextDouble();
 			newBalance = accountBalance + cashDeposited;
