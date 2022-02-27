@@ -3,15 +3,25 @@ package methodWithArg;
 import java.util.Scanner;
 
 public class AccountOperation {
-	String accountNumber = "1234567890123456";
-	int pin = 1234;
+	String userName = "";
+	int pin;
 	// boolean cardValidated = false;
 	Scanner sc = new Scanner(System.in);
 	double newBalance = 0;
 	double accountBalance = 1500.55;
+	
+	public AccountOperation() {
+		// TODO Auto-generated constructor stub
+		System.out.println("Create an online account:");
+	}
+	public AccountOperation(String actUserName, int pin) {
+		// TODO Auto-generated constructor stub
+		userName = actUserName;
+		this.pin = pin;
+	}
 
 	boolean cardValidation(String accountNum, int pinEntered) {
-		if (accountNum.equals(accountNumber) && pinEntered == pin) {
+		if (accountNum.equals(userName) && pinEntered == pin) {
 			return true;
 		}
 		return false;
@@ -24,7 +34,7 @@ public class AccountOperation {
 			newBalance = accountBalance + cashDeposited;
 			System.out.println("The new balance on the account is: "+newBalance);
 		} else {
-			System.out.println("The Account Aumber or PIN entered is incorrect");
+			System.out.println("The Username or PIN entered is incorrect");
 		}
 	}
 
